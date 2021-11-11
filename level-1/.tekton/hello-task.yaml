@@ -6,7 +6,8 @@ spec:
   steps:
     - name: echo
       image: ubuntu
-      onError: continue
-      script: |
-         exit 1
+      command:
+        - echo
+      args:
+        - "hello world"
         
