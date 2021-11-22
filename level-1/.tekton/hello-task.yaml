@@ -7,7 +7,6 @@ spec:
     - name: echo
       image: ubuntu
       command:
-        - echo
-      args:
-        - "hello world"
+        - env
+      
         
