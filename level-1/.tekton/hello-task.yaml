@@ -6,7 +6,12 @@ spec:
   steps:
     - name: echo
       image: ubuntu
-      command:
-        - env
+      envFrom:
+       - configMapRef:
+           name: environment-properties
+      command: ["/bin/bash", "-c"]
+      args:
+        - echo -e "The environment for this Step is ";
+          env
       
         
