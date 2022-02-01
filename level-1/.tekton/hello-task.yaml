@@ -4,32 +4,16 @@ metadata:
   name: hello-task
 spec:
   steps:
-    - name: echo
+    - name: TRIGGER_PAYLOAD
       image: ubuntu
       envFrom:
        - configMapRef:
-           name: environment-properties
-      command: ["/bin/bash", "-c"]
-      args:
-        - echo -e "The environment for this Step is ";
-          env     
----
-apiVersion: tekton.dev/v1beta1
-kind: Task
-metadata:
-  name: test-task
-spec:
-  steps:
-    - name: TRIGGER_PAYLOAD
-      envFrom:
-        - configMapRef:
-              name: trigger
-              key: payload.json
+           name: trigger
+           key: payload.json
       command: ["/bin/bash", "-c"]
       args:
         - echo -e "The \033[36menvironment\033[0m for this Step is ";
           env;
           echo "";
           echo "One sample property from this environment is >>";
-          echo "event-payload"
----      
+          echo "event-payload"     
