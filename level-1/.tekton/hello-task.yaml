@@ -12,8 +12,7 @@ spec:
       command: ["/bin/bash", "-c"]
       args:
         - echo -e "The environment for this Step is ";
-          env
-      
+          env     
 ---
 apiVersion: tekton.dev/v1beta1
 kind: Task
