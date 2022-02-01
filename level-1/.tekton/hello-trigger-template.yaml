@@ -3,6 +3,10 @@ kind: TriggerTemplate
 metadata:
   name: hello-trigger-template
 spec:
+  params:
+    - name: event-payload
+      description: event payload from the trigger webhook
+      default: ''
   resourcetemplates:
     - apiVersion: tekton.dev/v1alpha1
       kind: PipelineRun
