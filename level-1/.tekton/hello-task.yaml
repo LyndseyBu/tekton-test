@@ -18,6 +18,5 @@ spec:
           env;
           echo "";
           echo "One sample property from this environment is >>";
-          echo "$event-payload" 
-          test=`echo ${TRIGGER_PAYLOAD}`;
-          echo ${test}
+          echo $TRIGGER_PAYLOAD
+
