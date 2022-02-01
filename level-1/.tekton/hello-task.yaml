@@ -4,7 +4,7 @@ metadata:
   name: hello-task
 spec:
   steps:
-    - name: evebt-payload
+    - name: TRIGGER_PAYLOAD
       image: ubuntu
       envFrom:
        - configMapRef:
@@ -16,4 +16,6 @@ spec:
           env;
           echo "";
           echo "One sample property from this environment is >>";
-          echo "event-payload"     
+          echo "$event-payload" 
+          test=`echo ${TRIGGER_PAYLOAD}`;
+          echo ${test}
