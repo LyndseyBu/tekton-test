@@ -18,7 +18,7 @@ spec:
 apiVersion: tekton.dev/v1beta1
 kind: Task
 metadata:
-  name: cm-all-props
+  name: test-task
 spec:
   steps:
     - name: TRIGGER_PAYLOAD
