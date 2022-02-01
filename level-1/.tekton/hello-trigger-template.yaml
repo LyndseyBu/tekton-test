@@ -7,6 +7,9 @@ spec:
     - name: event-payload
       description: event payload from the trigger webhook
       default: ''
+    - name: body
+      description: body of msg
+      default: testing default body
   resourcetemplates:
     - apiVersion: tekton.dev/v1alpha1
       kind: PipelineRun
@@ -20,5 +23,16 @@ spec:
       metadata:
         name: trigger
         data:
-          payload.json: $(tt.params.event-payload)
+          payload.json: $(params.event-payload)
+    - apiVersion: tekton.dev/v1alpha1
+      kind: TaskRun
+      metadata:
+        generateName: task-run-
+      spec:
+        taskSpec:
+          steps:
+            - image: ubuntu
+              script: |
+                #! /bin/bash
+                echo $(params.body)
 
