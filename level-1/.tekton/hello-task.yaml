@@ -32,5 +32,5 @@ spec:
           env;
           echo "";
           echo "One sample property from this environment is >>";
-          echo ""
+          echo "event-payload"
 ---      
