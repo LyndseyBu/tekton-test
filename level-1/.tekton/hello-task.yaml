@@ -4,7 +4,7 @@ metadata:
   name: hello-task
 spec:
   steps:
-    - name: TRIGGER_PAYLOAD
+    - name: evebt-payload
       image: ubuntu
       envFrom:
        - configMapRef:
