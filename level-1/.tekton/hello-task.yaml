@@ -14,4 +14,23 @@ spec:
         - echo -e "The environment for this Step is ";
           env
       
-        
+---
+apiVersion: tekton.dev/v1beta1
+kind: Task
+metadata:
+  name: cm-all-props
+spec:
+  steps:
+    - name: TRIGGER_PAYLOAD
+      envFrom:
+        - configMapRef:
+              name: trigger
+              key: payload.json
+      command: ["/bin/bash", "-c"]
+      args:
+        - echo -e "The \033[36menvironment\033[0m for this Step is ";
+          env;
+          echo "";
+          echo "One sample property from this environment is >>";
+          echo ""
+---      
