@@ -4,8 +4,10 @@ metadata:
   name: hello-task
 spec:
   steps:
-    - name: TRIGGER_PAYLOAD
+    - name: trigger-payload
       image: ubuntu
+      env:
+        - name: TRIGGER_PAYLOAD
       envFrom:
        - configMapRef:
            name: trigger
