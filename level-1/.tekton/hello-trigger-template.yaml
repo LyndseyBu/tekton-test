@@ -15,4 +15,10 @@ spec:
       spec:
         pipelineRef:
           name: hello-pipeline
+    - apiVersion: tekton.dev/v1alpha1
+        kind: ConfigMap
+        metadata:
+          name: trigger
+        data:
+          payload.json: $(params.event-payload)
 
