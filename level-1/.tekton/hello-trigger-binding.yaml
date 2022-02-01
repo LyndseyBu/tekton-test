@@ -8,3 +8,7 @@ spec:
       value: "https://github.com/danielbu-ibm/Tekton-Tutorial"
     - name: branch
       value: "master"
+    - name: event-payload
+      value: $(body)
+    - name: branch
+      value: $(body.ref)
