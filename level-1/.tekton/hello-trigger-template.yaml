@@ -20,5 +20,5 @@ spec:
       metadata:
         name: trigger
         data:
-          payload.json: $(params.event-payload)
+          payload.json: $(tt.params.event-payload)
 
