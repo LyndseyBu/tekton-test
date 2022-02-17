@@ -6,7 +6,7 @@ spec:
   steps:
     - name: trigger-payload
       image: ubuntu
-       env:
+      env:
         - name: TRIGGER_PAYLOAD
       envFrom:
        - configMapRef:
