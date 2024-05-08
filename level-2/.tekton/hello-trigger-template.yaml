@@ -12,7 +12,7 @@ spec:
     - apiVersion: tekton.dev/v1alpha1
       kind: PipelineRun
       metadata:
-        name: pipelinerun-$(uid)
+        name: newname-$(uid)
       spec:
         pipelineRef:
           name: hello-pipeline
